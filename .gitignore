@@ -16,3 +16,9 @@ models/
 
 # Documentation Notes
 project notes/
+
+# Development Enviroment
+notebooks/dev/
+
+# Saved Figures
+reports/figures/
