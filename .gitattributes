@@ -1,0 +1,5 @@
+# Strip outputs for dev notebooks
+notebooks/dev/*.ipynb filter=nbstripout
+
+# Keep outputs for report notebooks
+notebooks/reports/*.ipynb filter=nbstripout keep-output
