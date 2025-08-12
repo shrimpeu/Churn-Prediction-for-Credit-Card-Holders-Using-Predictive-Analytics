@@ -5,6 +5,9 @@ __pycache__/
 # Ignore virtual environment
 .venv/
 env/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
 
 # Ignore data & models
 data/
