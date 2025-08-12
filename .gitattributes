@@ -3,3 +3,5 @@
 notebooks/dev/*.ipynb filter=nbstripout
 # Keep outputs for report notebooks
 notebooks/report/*.ipynb -filter
+# Everywhere
+**/.ipynb_checkpoints/ -filter
