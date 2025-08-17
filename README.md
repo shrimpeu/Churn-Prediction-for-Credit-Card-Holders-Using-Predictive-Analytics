@@ -1,6 +1,6 @@
 # Credit Card Customer Churn Prediction
 
-## 📌 Project Overview
+## Project Overview
 A major bank is experiencing customer attrition in its credit card division.  
 This project aimed to build a predictive model to identify customers likely to close their credit card accounts, enabling proactive retention strategies.
 
@@ -12,7 +12,7 @@ We explored a synthetic dataset containing customer information, transaction his
 
 ---
 
-## 🎯 Objectives
+## Objectives
 1. **Data Understanding & Cleaning**  
    - Explored dataset and summarized key statistics.  
    - Handled missing values, outliers, duplicates, and imbalance.  
@@ -36,13 +36,13 @@ We explored a synthetic dataset containing customer information, transaction his
 
 ---
 
-## 📒 Notebooks
+## Notebooks
 - `notebooks/dev/` → Development notebooks (no outputs, used for experimentation).  
 - `notebooks/reports/` → Final notebooks with outputs (recommended for review).  
 
 ---
 
-## 📊 Results Summary
+## Results Summary
 - **Models Tested**: Logistic Regression, Random Forest, XGBoost  
 - **Key Metrics**:  
   - Accuracy appeared high.  
@@ -53,7 +53,7 @@ We explored a synthetic dataset containing customer information, transaction his
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 ```
 creditcard-churn/
 ├─ data/
@@ -71,7 +71,7 @@ creditcard-churn/
 
 ---
 
-## 📈 Evaluation Metrics
+## Evaluation Metrics
 - **Accuracy**
 - **Precision, Recall, F1-score**
 - **ROC-AUC**
@@ -80,7 +80,7 @@ creditcard-churn/
 
 ---
 
-## 🛠 Tools & Libraries
+## Tools & Libraries
 - **Python**: pandas, numpy, matplotlib, seaborn  
 - **Modeling**: scikit-learn, XGBoost, LightGBM  
 - **Imbalance Handling**: imblearn.over_sampling  
@@ -89,13 +89,13 @@ creditcard-churn/
 
 ---
 
-## 👤 Author
+## Author
 **Mark Francis Masadre**  
 📧 masadremarkfrancis@gmail.com  
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 - Expand dataset with behavioral and transactional features.  
 - Explore additional external data sources.  
 - Revisit modeling with richer signals.  
