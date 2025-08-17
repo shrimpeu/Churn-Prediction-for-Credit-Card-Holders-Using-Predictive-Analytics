@@ -221,12 +221,51 @@ elif page == "EDA":
 # =========================
 elif page == "Model Results":
     st.header("Model Performance Summary")
+
+    # Logistic Regression
+    st.subheader("Logistic Regression")
     st.markdown("""
-    - **Accuracy:** ~95% (misleading due to class imbalance)
-    - **Precision / Recall / F1-score:** All 0.0
-    - **ROC-AUC:** ~0.51–0.52 → close to random guessing
+    - **Accuracy:** ~95% (misleading due to class imbalance)  
+    - **Precision / Recall / F1-score (Churn class):** 0.0  
+    - **ROC-AUC:** ~0.51 → essentially random guessing  
     
     **Interpretation:**  
-    The model predicts only the majority class (non-churn).  
-    No strong features in the dataset separate churn from non-churn customers.
+    Logistic Regression failed to detect churners and predicted only the majority class (non-churn).  
     """)
+    st.image(r"..\reports\figures\Model_Training_Evaluation\logistic_regression_conf_matrix.png", caption="Logistic Regression – Evaluation Results")
+
+    # Random Forest
+    st.subheader("Random Forest")
+    st.markdown("""
+    - **Accuracy:** ~95% (also misleading)  
+    - **Precision / Recall / F1-score (Churn class):** 0.0  
+    - **ROC-AUC:** ~0.52  
+    
+    **Interpretation:**  
+    Despite being more complex, Random Forest still failed to capture useful patterns.  
+    The lack of signal in features prevented the model from distinguishing churners.  
+    """)
+    st.image(r"..\reports\figures\Model_Training_Evaluation\random_forest_conf_matrix.png", caption="Random Forest – Evaluation Results")
+
+    # XGBoost
+    st.subheader("XGBoost")
+    st.markdown("""
+    - **Accuracy:** ~95% (due to imbalance)  
+    - **Precision / Recall / F1-score (Churn class):** 0.0  
+    - **ROC-AUC:** ~0.50
+    
+    **Interpretation:**  
+    XGBoost, a more advanced boosting model, still performed no better than chance.  
+    This confirms that the dataset lacks predictive power for churn.  
+    """)
+    st.image(r"..\reports\figures\Model_Training_Evaluation\xgboost_conf_matrix.png", caption="XGBoost – Evaluation Results")
+
+    # General Conclusion
+    st.markdown("""
+    ---
+    **Overall Conclusion:**  
+    All models (Logistic Regression, Random Forest, XGBoost) failed to predict churn effectively.  
+    The consistently poor performance indicates that the available features do not contain enough predictive information about customer churn.  
+    Additional behavioral or engagement-related data would likely be required to improve performance.  
+    """)
+
