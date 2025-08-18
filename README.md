@@ -8,8 +8,6 @@ We explored a synthetic dataset containing customer information, transaction his
 - Data exploration and preprocessing.  
 - Feature engineering to capture customer behaviors.  
 - Training and evaluating classification models.  
-- Providing insights and recommendations for churn reduction.  
-
 ---
 
 ## Objectives
@@ -28,7 +26,6 @@ We explored a synthetic dataset containing customer information, transaction his
 
 4. **Insights & Recommendations**  
    - Identified dataset limitations and possible improvements.  
-   - Suggested business strategies for retention.  
 
 5. **Dashboard**  
    - Built an interactive Streamlit dashboard to show the **EDA process and model performance**.  
