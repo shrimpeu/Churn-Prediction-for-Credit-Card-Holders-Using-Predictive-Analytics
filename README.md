@@ -29,7 +29,7 @@ We explored a synthetic dataset containing customer information, transaction his
 
 5. **Dashboard**  
    - Built an interactive Streamlit dashboard to show the **EDA process and model performance**.  
-   - [👉 View Dashboard](https://shrimpeu-churn-prediction-for-credit--dashboarddashboard-woujol.streamlit.app/)  
+   - [👉 View Dashboard](https://shrimpeu-churn-prediction-for-credit--dashboard-woujol.streamlit.app/)  
 
 ---
 
