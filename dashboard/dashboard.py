@@ -3,25 +3,53 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import math
+import gdown
 from pathlib import Path
 
 # =========================
 # Paths
 # =========================
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Local
+# BASE_DIR = Path(__file__).resolve().parent.parent
+# DATA_PATHS = {
+#     "Train": BASE_DIR / "data" / "processed" / "train.csv",
+#     "Train after SMOTE": BASE_DIR / "data" / "processed" / "train_after_smote.csv",
+#     "Test": BASE_DIR / "data" / "processed" / "test.csv",
+# }
+# CLEANED_PATH = BASE_DIR / "data" / "processed" / "credit_card_attrition_cleaned.csv"
+
+# Google Drive
 DATA_PATHS = {
-    "Train": BASE_DIR / "data" / "processed" / "train.csv",
-    "Train after SMOTE": BASE_DIR / "data" / "processed" / "train_after_smote.csv",
-    "Test": BASE_DIR / "data" / "processed" / "test.csv",
+    "Train": "https://drive.google.com/uc?id=1ojNA2VOJAQazz1OQ5GTGW0gazz9AUwQm",
+    "Train after SMOTE": "https://drive.google.com/uc?id=1UKu6h-0nbyRFntrrXuKdQOuImAM5kkfQ",
+    "Test": "https://drive.google.com/uc?id=1FrMfClLs9vcpFXWpbzUGv1HG2y7AuvpA",
 }
-CLEANED_PATH = BASE_DIR / "data" / "processed" / "credit_card_attrition_cleaned.csv"
+CLEANED_PATH = "https://drive.google.com/uc?id=1w6qehlWNA48RTGpDVS_owEw3JedfI6EG"
 
 # =========================
 # Load Data
 # =========================
 @st.cache_data
-def load_data(path):
-    return pd.read_csv(path)
+# Local
+# def load_data(path):
+#     return pd.read_csv(path)
+
+# Google Drive
+def load_data(path, filename=None):
+    """
+    Loads CSV from Google Drive or local path.
+    If path is a Google Drive link, downloads it using gdown.
+    filename: local filename to save downloaded file (required for Drive links)
+    """
+    if path.startswith("https://drive.google.com"):
+        if filename is None:
+            # Default to the last part of the URL as filename
+            filename = path.split("=")[-1] + ".csv"
+        gdown.download(path, filename, quiet=True)
+        df = pd.read_csv(filename)
+    else:
+        df = pd.read_csv(path)
+    return df
 
 # =========================
 # Sidebar Navigation
@@ -34,7 +62,7 @@ page = st.sidebar.radio("Go to", ["Overview", "EDA", "Model Results"])
 # =========================
 if page == "Overview":
     dataset_choice = st.selectbox("Select Dataset to View", list(DATA_PATHS.keys()))
-    df = load_data(DATA_PATHS[dataset_choice])
+    df = load_data(DATA_PATHS[dataset_choice], filename=f"{dataset_choice}.csv")
 
     st.title("Churn Prediction – Credit Card Holders")
     st.markdown("""
@@ -57,7 +85,7 @@ if page == "Overview":
 # EDA Section
 # =========================
 elif page == "EDA":
-    df = load_data(CLEANED_PATH)
+    df = load_data(CLEANED_PATH, filename="credit_card_attrition_cleaned.csv")
 
     if "AttritionFlag" not in df.columns:
         st.error("'AttritionFlag' column not found in dataset.")
@@ -197,7 +225,7 @@ elif page == "EDA":
 
         st.markdown("2.3. Correlation Analysis with all features including newly engineered features")
 
-        train_df = load_data(DATA_PATHS["Train"])
+        train_df = load_data(DATA_PATHS["Train"], filename="Train.csv")
 
         corr_method2 = st.selectbox("Select correlation method for 2.3.", ["pearson", "spearman"])
         corr_matrix2 = train_df.corr(method=corr_method2)

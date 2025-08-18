@@ -10,3 +10,5 @@ xgboost
 shap
 statsmodels
 imbalanced-learn
+gdown
+fsspec
