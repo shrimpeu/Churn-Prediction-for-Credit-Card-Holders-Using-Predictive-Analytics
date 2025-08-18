@@ -53,9 +53,6 @@ We explored a synthetic dataset containing customer information, transaction his
 ## Project Structure
 ```
 creditcard-churn/
-├─ data/
-│  ├─ raw/                  # Original dataset (excluded from repo if large)
-│  └─ processed/            # Cleaned/processed data
 ├─ notebooks/
 │  ├─ dev/                  # Development notebooks (no outputs)
 │  └─ reports/              # Final notebooks with outputs
