@@ -65,6 +65,8 @@ creditcard-churn/
 ├─ reports/                 # Plots, presentations, summaries
 ├─ dashboard/               # Streamlit dashboard folder
 │  └─ dashboard.py          # Main Streamlit app file
+├─ reports/
+│  ├─ figures/              # Plots saved from notebooks
 ├─ requirements.txt         # Project dependencies
 └─ README.md                # Project documentation
 ```
