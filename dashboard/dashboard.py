@@ -260,7 +260,11 @@ elif page == "Model Results":
     **Interpretation:**  
     Logistic Regression failed to detect churners and predicted only the majority class (non-churn).  
     """)
-    st.image(r"..\reports\figures\Model_Training_Evaluation\logistic_regression_conf_matrix.png", caption="Logistic Regression – Evaluation Results")
+    st.image(
+        "https://raw.githubusercontent.com/shrimpeu/Churn-Prediction-for-Credit-Card-Holders-Using-Predictive-Analytics/main/reports/figures/Model_Training_Evaluation/logistic_regression_conf_matrix.png",
+        caption="Logistic Regression – Evaluation Results",
+        use_container_width=True
+    )
 
     # Random Forest
     st.subheader("Random Forest")
@@ -273,7 +277,11 @@ elif page == "Model Results":
     Despite being more complex, Random Forest still failed to capture useful patterns.  
     The lack of signal in features prevented the model from distinguishing churners.  
     """)
-    st.image(r"..\reports\figures\Model_Training_Evaluation\random_forest_conf_matrix.png", caption="Random Forest – Evaluation Results")
+    st.image(
+        "https://raw.githubusercontent.com/shrimpeu/Churn-Prediction-for-Credit-Card-Holders-Using-Predictive-Analytics/main/reports/figures/Model_Training_Evaluation/random_forest_conf_matrix.png",
+        caption="Random Forest – Evaluation Results",
+        use_container_width=True
+    )
 
     # XGBoost
     st.subheader("XGBoost")
@@ -286,7 +294,11 @@ elif page == "Model Results":
     XGBoost, a more advanced boosting model, still performed no better than chance.  
     This confirms that the dataset lacks predictive power for churn.  
     """)
-    st.image(r"..\reports\figures\Model_Training_Evaluation\xgboost_conf_matrix.png", caption="XGBoost – Evaluation Results")
+    st.image(
+        "https://raw.githubusercontent.com/shrimpeu/Churn-Prediction-for-Credit-Card-Holders-Using-Predictive-Analytics/main/reports/figures/Model_Training_Evaluation/xgboost_conf_matrix.png",
+        caption="XGBoost – Evaluation Results",
+        use_container_width=True
+    )
 
     # General Conclusion
     st.markdown("""
